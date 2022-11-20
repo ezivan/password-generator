@@ -1,0 +1,258 @@
+/* ********** Custom Properties ********** */
+
+:root {
+  --primary-color: #fff;
+  --secondary-color: #7a63ff;
+  --tertiary-color: #e2e0e0;
+  --font-family: 'Raleway', sans-serif;
+}
+
+/* ********** Reset ********** */
+
+@font-face {
+  font-family: "Raleway";
+  src: url(assets/static/Raleway-Regular.ttf) format(truetype);
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: url(assets/static/Raleway-Bold.ttf) format(truetype);
+  font-style: normal;
+  font-weight: bold;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: var(--font-family);
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #272727;
+  background-color: var(--primary-color);
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* ********** Utilities ********** */
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 53px;
+  height: 25px;
+}
+
+.switch>input {
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--tertiary-color);
+  cursor: pointer;
+  transition: .4s;
+  border-radius: 1rem;
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  width: 23px;
+  height: 23px;
+  left: 3px;
+  bottom: 1px;
+  background-color: var(--primary-color);
+  transition: .4s;
+  border-radius: 1rem;
+}
+
+.switch>input:checked+.slider {
+  background-color: var(--secondary-color);
+}
+
+.switch>input:checked+.slider::before {
+  transform: translateX(26px);
+}
+
+/* ********** Site Style ********** */
+
+
+.container {
+  width: 90%;
+  max-width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: .7rem;
+}
+
+.copy-message {
+  padding: 0.2rem;
+  margin-right: auto;
+  margin-left: auto;
+  width: 120px;
+  height: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
+  font-size: 0.4rem;
+  color: #fff;
+  font-weight: normal;
+  border-radius: 1rem;
+  background-color: var(--secondary-color);
+  transform: translateY(15px);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform .5s;
+}
+
+.copy-message.active {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.form-container {
+  display: flex;
+  margin-bottom: 2rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.generated-password-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  gap: .5rem;
+}
+
+
+.generated-password-container input {
+  width: 12rem;
+  background: var(--tertiary-color);
+  padding: .5rem;
+  border: none;
+  border-radius: .3rem;
+  cursor: pointer;
+  text-align: center;
+}
+
+.generated-password-container input::selection {
+  background-color: transparent;
+}
+
+.generate-btn {
+  position: relative;
+  width: 7rem;
+  height: 2rem;
+  border: none;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border-radius: .3rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.generate-btn::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: .5rem;
+  height: .5rem;
+  background-color: var(--secondary-color);
+  transform: rotate(45deg);
+}
+
+.logotype {
+  display: block;
+  margin-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.options-value {
+  display: flex;
+  flex-direction: column;
+}
+
+.options p,
+.options-value label {
+  margin-top: 1rem;
+}
+
+.password-options {
+  width: 100%;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.password-lenght-control {
+  display: flex;
+  height: 2rem;
+  justify-content: center;
+  margin-top: .5rem;
+}
+
+.password-lenght-control input {
+  width: 4rem;
+  text-align: center;
+  background-color: var(--tertiary-color);
+  border: none;
+}
+
+.password-lenght-control button {
+  width: 2rem;
+  color: var(--primary-color);
+  border: none;
+  background-color: var(--secondary-color);
+}
