@@ -79,5 +79,6 @@
 
   d.addEventListener("change", (e) => {
     if (e.target.matches("input[type='checkbox']")) changeSetting(e.target);
+    if (e.target.matches("#passwordSize")) settings.size = e.target.value;
   });
 })(document);
